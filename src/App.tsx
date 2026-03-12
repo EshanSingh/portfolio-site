@@ -1,0 +1,27 @@
+import { Terminal } from './components/Terminal';
+import { TitleBar } from './components/TitleBar';
+import { useTheme } from './hooks/useTheme';
+import './styles/globals.css';
+
+function App() {
+  const { theme, toggle } = useTheme();
+
+  return (
+    <div style={{
+      width: '860px',
+      height: '540px',
+      display: 'flex',
+      flexDirection: 'column',
+      borderRadius: '10px',
+      border: '1px solid var(--color-border)',
+      overflow: 'hidden',
+      background: 'var(--color-bg-surface)',
+      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+    }}>
+      <TitleBar theme={theme} onThemeToggle={toggle} />
+      <Terminal onThemeToggle={toggle} />
+    </div>
+  );
+}
+
+export default App;

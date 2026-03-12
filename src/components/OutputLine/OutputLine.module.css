@@ -1,0 +1,39 @@
+.line {
+  padding: 1px 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.blank {
+  height: 1.2em;
+}
+
+.default {
+  color: var(--color-text);
+}
+
+.green {
+  color: var(--color-green);
+}
+
+.cyan {
+  color: var(--color-cyan);
+}
+
+.amber {
+  color: var(--color-amber);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.red {
+  color: var(--color-red);
+}
+
+.bold {
+  color: var(--color-text);
+  font-weight: 700;
+}
