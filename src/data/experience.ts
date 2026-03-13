@@ -33,4 +33,12 @@ export const experience: ExperienceItem[] = [
       'Developed Volunteer portal for “Food for All DC” nonprofit, using React, Node.js, and Firebase, enabling efficient volunteer management and automated Route Planning.',
     tags: ['React', 'Node.js', 'Firebase', 'TypeScript'],
   },
+  {
+    company: 'Algoverse',
+    role: 'Student Researcher',
+    date: 'Oct 2024 – Apr 2025',
+    description:
+      'Final Paper Accepted NAACL 2025 & ICML 2025\nImproved LLM long-context retention by 50%  through novel pause-token injection methodology. Finetuned SOTA LLMs to improve retentive ability using Pytorch + Unsloth.',
+    tags: ['Python', 'Pytorch', 'Fine-tuning', 'LLMs'],
+  },
 ];

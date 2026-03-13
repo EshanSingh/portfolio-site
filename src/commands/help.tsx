@@ -10,7 +10,7 @@ export function helpCommand(): OutputLine[] {
     { id: uid(), content: '  experience     Work history and roles', variant: 'green' },
     { id: uid(), content: '  projects       Things I\'ve built', variant: 'green' },
     { id: uid(), content: '  logs           Recent updates and thoughts', variant: 'green' },
-    { id: uid(), content: '  theme          Toggle dark / light mode', variant: 'green' },
+    { id: uid(), content: '  theme          Cycle theme / theme <name>', variant: 'green' },
     { id: uid(), content: '  clear          Clear the terminal', variant: 'green' },
     { id: uid(), content: '  help           Show this message', variant: 'green' },
     blank(),

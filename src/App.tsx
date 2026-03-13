@@ -4,7 +4,7 @@ import { useTheme } from './hooks/useTheme';
 import './styles/globals.css';
 
 function App() {
-  const { theme, toggle } = useTheme();
+  const { theme, cycle, setByName } = useTheme();
 
   return (
     <div style={{
@@ -18,8 +18,8 @@ function App() {
       background: 'var(--color-bg-surface)',
       boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
     }}>
-      <TitleBar theme={theme} onThemeToggle={toggle} />
-      <Terminal onThemeToggle={toggle} />
+      <TitleBar theme={theme} onThemeToggle={() => setByName(theme === 'light' ? 'dark' : 'light')} />
+      <Terminal themeActions={{ cycle, setByName, theme }} />
     </div>
   );
 }

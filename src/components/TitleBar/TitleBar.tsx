@@ -15,7 +15,7 @@ export function TitleBar({ theme, onThemeToggle }: Props) {
       </div>
       <span className={styles.title}>portfolio — bash</span>
       <button className={styles.themeToggle} onClick={onThemeToggle} aria-label="Toggle theme">
-        {theme === 'dark' ? '☀' : '☾'}
+        {theme === 'light' ? '☾' : '☀'}
       </button>
     </div>
   );

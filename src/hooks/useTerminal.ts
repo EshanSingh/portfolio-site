@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { commands } from '../commands';
 import { uid } from '../commands/utils';
+import { THEMES } from '../types';
 import type { HistoryEntry, OutputLine } from '../types';
 
 const BOOT_LINES: OutputLine[] = [
@@ -9,7 +10,13 @@ const BOOT_LINES: OutputLine[] = [
   { id: uid(), content: '' },
 ];
 
-export function useTerminal(onThemeToggle: () => void) {
+interface ThemeActions {
+  cycle: () => void;
+  setByName: (name: string) => boolean;
+  theme: string;
+}
+
+export function useTerminal(themeActions: ThemeActions) {
   const [entries, setEntries] = useState<HistoryEntry[]>([
     { command: '', output: BOOT_LINES },
   ]);
@@ -18,17 +25,39 @@ export function useTerminal(onThemeToggle: () => void) {
     const cmd = raw.trim().toLowerCase();
 
     if (cmd === 'clear') {
-      setEntries([]);
+      setEntries([{ command: '', output: BOOT_LINES }]);
       return;
     }
 
     if (cmd === 'theme') {
-      onThemeToggle();
+      themeActions.cycle();
       setEntries((prev) => [
         ...prev,
         {
           command: raw.trim(),
-          output: [{ id: uid(), content: 'Theme toggled.', variant: 'green' }],
+          output: [
+            { id: uid(), content: 'Theme cycled to next.', variant: 'green' },
+            { id: uid(), content: `Available: ${THEMES.join(', ')}`, variant: 'muted' },
+            { id: uid(), content: 'Usage: theme <name> to pick a specific theme.', variant: 'muted' },
+          ],
+        },
+      ]);
+      return;
+    }
+
+    if (cmd.startsWith('theme ')) {
+      const name = cmd.slice(6).trim();
+      const success = themeActions.setByName(name);
+      setEntries((prev) => [
+        ...prev,
+        {
+          command: raw.trim(),
+          output: success
+            ? [{ id: uid(), content: `Theme set to "${name}".`, variant: 'green' }]
+            : [
+                { id: uid(), content: `Unknown theme: "${name}"`, variant: 'red' },
+                { id: uid(), content: `Available: ${THEMES.join(', ')}`, variant: 'muted' },
+              ],
         },
       ]);
       return;
@@ -48,7 +77,7 @@ export function useTerminal(onThemeToggle: () => void) {
     }
 
     setEntries((prev) => [...prev, { command: raw.trim(), output }]);
-  }, [onThemeToggle]);
+  }, [themeActions]);
 
   return { entries, execute };
 }

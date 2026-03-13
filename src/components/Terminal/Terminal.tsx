@@ -6,11 +6,15 @@ import { TerminalOutput } from './TerminalOutput';
 import styles from './Terminal.module.css';
 
 interface Props {
-  onThemeToggle: () => void;
+  themeActions: {
+    cycle: () => void;
+    setByName: (name: string) => boolean;
+    theme: string;
+  };
 }
 
-export function Terminal({ onThemeToggle }: Props) {
-  const { entries, execute } = useTerminal(onThemeToggle);
+export function Terminal({ themeActions }: Props) {
+  const { entries, execute } = useTerminal(themeActions);
   const { push, navigateUp, navigateDown, current } = useCommandHistory();
   const [inputValue, setInputValue] = useState('');
   const bottomRef = useRef<HTMLDivElement>(null);

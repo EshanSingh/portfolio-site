@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
-export type Theme = 'dark' | 'light';
+export const THEMES = ['dark', 'light', 'nord', 'solarized', 'monokai', 'dracula'] as const;
+export type Theme = (typeof THEMES)[number];
 
 export type OutputVariant =
   | 'default'

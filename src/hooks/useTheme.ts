@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import type { Theme } from '../types';
+import { useState, useEffect, useCallback } from 'react';
+import { THEMES, type Theme } from '../types';
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -12,7 +12,21 @@ export function useTheme() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  const toggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+  const cycle = useCallback(() => {
+    setTheme((t) => {
+      const i = THEMES.indexOf(t);
+      return THEMES[(i + 1) % THEMES.length];
+    });
+  }, []);
 
-  return { theme, toggle };
+  const setByName = useCallback((name: string): boolean => {
+    const lower = name.toLowerCase() as Theme;
+    if (THEMES.includes(lower)) {
+      setTheme(lower);
+      return true;
+    }
+    return false;
+  }, []);
+
+  return { theme, cycle, setByName };
 }
