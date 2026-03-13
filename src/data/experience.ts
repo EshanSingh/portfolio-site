@@ -2,27 +2,35 @@ import type { ExperienceItem } from '../types';
 
 export const experience: ExperienceItem[] = [
   {
-    company: 'Stripe',
-    role: 'Senior Software Engineer',
-    date: '2022 – present',
+    company: 'Capital One',
+    role: 'Machine Learning Intern',
+    date: 'Aug 2025 – Mar 2026',
     description:
-      'Led redesign of payment routing infrastructure handling $2B+ daily transactions. Reduced p99 latency by 40% through query optimization and caching layer.',
-    tags: ['Go', 'gRPC', 'Kafka', 'PostgreSQL'],
+      'Developed an internal rigorous RAG evaluation framework, supplemented with a Synthetic Adversarial Dataset Generator, to streamline RAG evaluation and enhance model robustness.',
+    tags: ['Python', 'RAG', 'Kubernetes', 'Jenkins'],
   },
   {
-    company: 'Vercel',
-    role: 'Software Engineer',
-    date: '2020 – 2022',
+    company: 'JDSAT',
+    role: 'Generative AI Intern',
+    date: 'Jun 2025 – Aug 2025',
     description:
-      'Built edge middleware runtime powering 100K+ deployments/day. Designed incremental static regeneration v2 reducing cache misses by 60%.',
-    tags: ['TypeScript', 'Rust', 'Next.js', 'AWS'],
+      'Developed Internal RAG Chatbot for 100+ employees reducing time spent on information retrieval by 50%. Integrated with Sharepoint and Microsoft Teams for seamless access to company knowledge.\nDeveloped a multi-modal STT insights pipeline for generating structured medical reports from audio recordings.',
+    tags: ['Python', 'AWS', 'Azure', 'Sharepoint', 'Microsoft Teams'],
   },
   {
-    company: 'Figma',
-    role: 'Frontend Engineer',
-    date: '2018 – 2020',
+    company: 'Maryland Institute for Technology in the Humanities',
+    role: 'Software Developer',
+    date: 'Jan 2025 – May 2025',
     description:
-      'Implemented real-time multiplayer cursor system and plugin API used by 50K+ community plugins. Optimized canvas rendering for 10x performance on complex files.',
-    tags: ['TypeScript', 'WebGL', 'C++', 'WebSocket'],
+      'Maintained Scholarly XML, a VScode extension with over 15k users\nIntegrated more accurate schema analysis using Salve, enabling precise XML correctness detection supplemented with intuitive UI prompts',
+    tags: ['TypeScript', 'VSCode', 'CI/CD'],
+  },
+  {
+    company: 'Hack4Impact',
+    role: 'Software Developer',
+    date: 'Jan 2025 – Aug 2025',
+    description:
+      'Developed Volunteer portal for “Food for All DC” nonprofit, using React, Node.js, and Firebase, enabling efficient volunteer management and automated Route Planning.',
+    tags: ['React', 'Node.js', 'Firebase', 'TypeScript'],
   },
 ];

@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div style={{
-      width: '860px',
-      height: '540px',
+      width: '75vw',
+      height: '75vh',
       display: 'flex',
       flexDirection: 'column',
       borderRadius: '10px',
