@@ -37,3 +37,11 @@
   color: var(--color-text);
   font-weight: 700;
 }
+
+.yellow {
+  color: var(--color-yellow);
+}
+
+.purple {
+  color: var(--color-purple);
+}

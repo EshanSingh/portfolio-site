@@ -10,7 +10,9 @@ export type OutputVariant =
   | 'amber'
   | 'muted'
   | 'red'
-  | 'bold';
+  | 'bold'
+  | 'yellow'
+  | 'purple';
 
 export interface OutputLine {
   id: string;
@@ -40,12 +42,13 @@ export interface ProjectItem {
   tags: string[];
 }
 
-export type LogType = 'update' | 'thought' | 'project';
+export type LogType = 'update' | 'thought' | 'project' | 'achievement';
 
 export interface LogEntry {
   type: LogType;
   date: string;
   text: string;
+  link?: string;
 }
 
 export type CommandFn = () => OutputLine[];
