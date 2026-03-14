@@ -13,7 +13,7 @@ export function TitleBar({ theme, onThemeToggle }: Props) {
         <span className={`${styles.dot} ${styles.minimize}`} />
         <span className={`${styles.dot} ${styles.maximize}`} />
       </div>
-      <span className={styles.title}>portfolio — bash</span>
+      <span className={styles.title}><i className="fa-solid fa-code" /> Eshan</span>
       <button className={styles.themeToggle} onClick={onThemeToggle} aria-label="Toggle theme">
         {theme === 'light' ? '☾' : '☀'}
       </button>

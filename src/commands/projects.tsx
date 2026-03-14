@@ -19,8 +19,6 @@ export function projectsCommand(): OutputLine[] {
               {proj.name}
             </a>
             {'  '}
-            <span className="stars">{proj.stars}</span>
-            {'  '}
             <span className="year">{proj.year}</span>
           </span>
         ),

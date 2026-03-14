@@ -2,39 +2,30 @@ import type { ProjectItem } from '../types';
 
 export const projects: ProjectItem[] = [
   {
-    name: 'querykit',
+    name: 'TDLR',
     year: '2024',
-    stars: '★ 2.4k',
+    stars: '★',
     description:
-      'Type-safe SQL query builder for TypeScript with zero runtime overhead. Compiles queries at build time.',
-    link: 'https://github.com/example/querykit',
-    tags: ['TypeScript', 'SQL', 'Compiler'],
+      'Automated summarization tool for websites on ANY domain (yup, even paywalled ones), Makes use of content chunking and batching for efficient LLM summarization and API call reduction.',
+    link: 'https://github.com/EshanSingh/tldr?tab=readme-ov-file',
+    tags: ['React', 'Vite', 'FastAPI', 'Huggingface', 'TypeScript', 'Python'],
   },
   {
-    name: 'termsync',
+    name: 'Game Finder',
     year: '2023',
-    stars: '★ 1.1k',
+    stars: '★',
     description:
-      'Real-time collaborative terminal sessions over WebRTC. Share your terminal with teammates instantly.',
-    link: 'https://github.com/example/termsync',
-    tags: ['Rust', 'WebRTC', 'Terminal'],
+      'My First React Project, a web app that helps users find their next game to play based on user-selected criteria. Implemented caching to reduce API calls and implemented various QOL features.',
+    link: 'https://github.com/EshanSingh/eshans-game-hub',
+    tags: ['React', 'Vite', 'TypeScript', 'Axios'],
   },
   {
-    name: 'pixelforge',
-    year: '2022',
-    stars: '★ 890',
+    name: 'Class Opening Notifier',
+    year: '2023',
+    stars: '★',
     description:
-      'GPU-accelerated image processing pipeline for the browser. Runs GLSL shaders on arbitrary image data.',
-    link: 'https://github.com/example/pixelforge',
-    tags: ['WebGL', 'GLSL', 'TypeScript'],
-  },
-  {
-    name: 'dotfig',
-    year: '2021',
-    stars: '★ 540',
-    description:
-      'Declarative dotfile manager that syncs configs across machines using a single TOML manifest.',
-    link: 'https://github.com/example/dotfig',
-    tags: ['Go', 'TOML', 'CLI'],
+      'SMS notifier that would alert users when a spot opened up in a specified class section. Helped me get the specific class section I wanted.',
+    link: 'https://github.com/EshanSingh/sms_updater',
+    tags: ['Python', 'Twilio', 'BeautifulSoup'],
   },
 ];

@@ -30,13 +30,15 @@ export function useTerminal(themeActions: ThemeActions) {
     }
 
     if (cmd === 'theme') {
+      const currentIdx = THEMES.indexOf(themeActions.theme as any);
+      const nextTheme = THEMES[(currentIdx + 1) % THEMES.length];
       themeActions.cycle();
       setEntries((prev) => [
         ...prev,
         {
           command: raw.trim(),
           output: [
-            { id: uid(), content: 'Theme cycled to next.', variant: 'green' },
+            { id: uid(), content: `Current theme: ${nextTheme}.`, variant: 'green' },
             { id: uid(), content: `Available: ${THEMES.join(', ')}`, variant: 'muted' },
             { id: uid(), content: 'Usage: theme <name> to pick a specific theme.', variant: 'muted' },
           ],
