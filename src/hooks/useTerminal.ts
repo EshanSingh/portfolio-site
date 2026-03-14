@@ -4,9 +4,15 @@ import { uid } from '../commands/utils';
 import { THEMES } from '../types';
 import type { HistoryEntry, OutputLine } from '../types';
 
-const BOOT_LINES: OutputLine[] = [
+const BASE_LINES: OutputLine[] = [
   { id: uid(), content: 'portfolio v1.0.0  (type "help" to see commands)', variant: 'green' },
   { id: uid(), content: `Last login: ${new Date().toDateString()}`, variant: 'muted' },
+  { id: uid(), content: '' },
+];
+
+const WELCOME_LINES: OutputLine[] = [
+  ...BASE_LINES,
+  { id: uid(), content: 'Welcome!', variant: 'cyan' },
   { id: uid(), content: '' },
 ];
 
@@ -18,14 +24,14 @@ interface ThemeActions {
 
 export function useTerminal(themeActions: ThemeActions) {
   const [entries, setEntries] = useState<HistoryEntry[]>([
-    { command: '', output: BOOT_LINES },
+    { command: '', output: WELCOME_LINES },
   ]);
 
   const execute = useCallback((raw: string) => {
     const cmd = raw.trim().toLowerCase();
 
     if (cmd === 'clear') {
-      setEntries([{ command: '', output: BOOT_LINES }]);
+      setEntries([{ command: '', output: BASE_LINES }]);
       return;
     }
 
