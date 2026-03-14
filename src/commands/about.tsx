@@ -6,26 +6,26 @@ export function aboutCommand(): OutputLine[] {
     { id: uid(), content: 'About Me', variant: 'cyan' },
     divider(),
     blank(),
-    { id: uid(), content: 'Hey, I\'m Alex — a software engineer who loves building', variant: 'default' },
-    { id: uid(), content: 'developer tools, infrastructure, and things that run fast.', variant: 'default' },
+    { id: uid(), content: 'Hi! I\'m Eshan. I\'m passionate about my work and', variant: 'default' },
+    { id: uid(), content: 'solving problems that push me to learn new things', variant: 'default' },
     blank(),
-    { id: uid(), content: 'I care about clean APIs, thoughtful abstractions, and', variant: 'default' },
-    { id: uid(), content: 'shipping software that other engineers actually enjoy using.', variant: 'default' },
+    { id: uid(), content: 'I care about writing meaningful code with impact and', variant: 'default' },
+    { id: uid(), content: 'shipping software that people actually enjoy using.', variant: 'default' },
     blank(),
-    { id: uid(), content: '  Location     San Francisco, CA', variant: 'muted' },
-    { id: uid(), content: '  Focus        Systems, DevTools, Infrastructure', variant: 'muted' },
-    { id: uid(), content: '  Languages    Go, TypeScript, Rust, Python', variant: 'muted' },
+    { id: uid(), content: '  Location     Boston, MA', variant: 'muted' },
+    { id: uid(), content: '  Focus        Machine Learning, RAG, Optimization', variant: 'muted' },
+    { id: uid(), content: '  Languages    Python, TypeScript, Java, C', variant: 'muted' },
     blank(),
     {
       id: uid(),
       content: (
         <span>
           {'  '}
-          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="link">GitHub</a>
+          <a href="https://github.com/EshanSingh" target="_blank" rel="noopener noreferrer" className="link">GitHub</a>
           {'  ·  '}
-          <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" className="link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/eshansingh-umd/" target="_blank" rel="noopener noreferrer" className="link">LinkedIn</a>
           {'  ·  '}
-          <a href="mailto:alex@example.com" className="link">alex@example.com</a>
+          <a href="mailto:23esingh@gmail.com" className="link">23esingh@gmail.com</a>
         </span>
       ),
     },
