@@ -14,4 +14,9 @@ export const logs: LogEntry[] = [
     date: '3-13-2026',
     text: 'Finally decided to finish up my personal website. Seeing it work feels great 😁',
   },
+    {
+    type: 'update',
+    date: '3-27-2026',
+    text: 'Made some UI improvements to the site based on feedback from my peers.',
+  },
 ];
