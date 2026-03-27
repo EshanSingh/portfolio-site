@@ -6,7 +6,7 @@ export const experience: ExperienceItem[] = [
     role: 'Machine Learning Intern',
     date: 'Aug 2025 – Mar 2026',
     description:
-      'Developed an internal rigorous RAG evaluation framework, supplemented with a Synthetic Adversarial Dataset Generator, to streamline RAG evaluation and enhance model robustness.',
+      'Developed an internal rigorous RAG evaluation framework, supplemented with a Synthetic Adversarial Dataset Generator, to streamline RAG evaluation and enhance model robustness.\nModel availible to over 1,000 internal empoyees',
     tags: ['Python', 'RAG', 'Kubernetes', 'Jenkins'],
   },
   {
