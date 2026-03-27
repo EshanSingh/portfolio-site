@@ -7,9 +7,11 @@ interface Props {
   onSubmit: (val: string) => void;
   onHistoryUp: () => void;
   onHistoryDown: () => void;
+  suggestion: string;
+  onAcceptSuggestion: () => void;
 }
 
-export function TerminalInput({ value, onChange, onSubmit, onHistoryUp, onHistoryDown }: Props) {
+export function TerminalInput({ value, onChange, onSubmit, onHistoryUp, onHistoryDown, suggestion, onAcceptSuggestion }: Props) {
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => { ref.current?.focus(); }, []);
@@ -18,6 +20,11 @@ export function TerminalInput({ value, onChange, onSubmit, onHistoryUp, onHistor
     if (e.key === 'Enter') {
       onSubmit(value);
       onChange('');
+    } else if (e.key === 'Tab' || (e.key === 'ArrowRight' && ref.current?.selectionStart === value.length)) {
+      if (suggestion) {
+        e.preventDefault();
+        onAcceptSuggestion();
+      }
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       onHistoryUp();
@@ -34,17 +41,24 @@ export function TerminalInput({ value, onChange, onSubmit, onHistoryUp, onHistor
         <span className={styles.promptPath}> ~ </span>
         $
       </span>
-      <input
-        ref={ref}
-        className={styles.input}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onKeyDown={handleKeyDown}
-        autoComplete="off"
-        spellCheck={false}
-        placeholder="type a command..."
-        aria-label="Terminal input"
-      />
+      <div className={styles.inputWrapper}>
+        {suggestion && (
+          <span className={styles.ghost} aria-hidden="true">
+            {suggestion}
+          </span>
+        )}
+        <input
+          ref={ref}
+          className={styles.input}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyDown={handleKeyDown}
+          autoComplete="off"
+          spellCheck={false}
+          placeholder={suggestion ? undefined : 'type a command...'}
+          aria-label="Terminal input"
+        />
+      </div>
     </div>
   );
 }
